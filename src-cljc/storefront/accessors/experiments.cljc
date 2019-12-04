@@ -95,5 +95,7 @@
 (defn black-friday-time?
   [data]
   (or (display-feature? data "black-friday-time")
-      (date/after? (date/now)
-                   (date/date-time 2019 11 29 4 55 0))))
+      (and (date/after? (date/now)
+                        (date/date-time 2019 11 29 4 55 0))
+           (date/after? (date/date-time 2019 12 9 18 30 0)
+                        (date/now)))))
